@@ -7,13 +7,9 @@ class StudentAnswersRepository:
     def __init__(self, folder_name):
         self.path = Path('data/' + folder_name + '/submissions')
         self.student_answers = {}
-
-    def set_student_answers(self):
-        print(os.listdir(self.path))
         for student_dir in os.listdir(self.path):
             student_path = self.path / student_dir
             submission_file_path = student_path / 'submission.txt'
-            print(submission_file_path)
             with open(submission_file_path, encoding='utf-8') as file:
                 text_content = file.read()
             parsed_data = []
@@ -32,7 +28,6 @@ class StudentAnswersRepository:
                     })
 
             self.student_answers[student_dir] = parsed_data
-        print(self.student_answers)
 
     def get_student_answers(self):
         return json.dumps(self.student_answers, indent=4)

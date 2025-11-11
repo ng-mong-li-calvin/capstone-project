@@ -2,12 +2,9 @@ from pathlib import Path
 import json, re
 
 
-class ModelAnswerRepository:
+class ModelQnARepository:
     def __init__(self, folder_name):
         self.path = Path('data/' + folder_name)
-        self.model_answer = {}
-
-    def set_model_answer(self):
         model_answer_file_path = next(self.path.rglob('*.txt'))  # Get the txt file path
         with open(model_answer_file_path, 'r') as f:
             text_content = f.read()
@@ -52,7 +49,7 @@ class ModelAnswerRepository:
                     "answer_text": answer_text
                 })
 
-        self.model_answer = json.dumps(parsed_data, indent=4)
+        self.model_qna = json.dumps(parsed_data, indent=4)
 
-    def get_model_answer(self):
-        return self.model_answer
+    def get_model_qna(self):
+        return self.model_qna
