@@ -1,16 +1,19 @@
-from app.repositories.ModelAnswerRepository import ModelAnswerRepository
+import os
+
+from app.repositories.ModelQnARepository import ModelQnARepository
 from app.repositories.StudentAnswersRepository import StudentAnswersRepository
+from app.repositories.OpenAPIClient import OpenAPIClient
+from app.services.EvaluationService import EvaluationService
 
 
 def main():
-    rugby_model = ModelAnswerRepository('Rugby Football Club')
-    rugby_model.set_model_answer()
-    rugby_students = StudentAnswersRepository('Rugby Football Club')
-    rugby_students.set_student_answers()
-    with open('data/model_answers.json', 'w') as f:
-        f.write(rugby_model.get_model_answer())
-    with open('data/student_answers.json', 'w') as f:
-        f.write(rugby_students.get_student_answers())
+    rugby_model = ModelQnARepository('Rugby Football Club').get_model_qna()
+    rugby_students = StudentAnswersRepository('Rugby Football Club').get_student_answers()
+    client = OpenAPIClient(api_key=os.getenv('OPENAI_API_KEY'))
+    evaluation_service = EvaluationService(client)
+    evaluation_results = evaluation_service.evaluate(rugby_model, rugby_students)
+    with open('evaluation_results.json', 'w') as f:
+        f.write(evaluation_results)
 
 
 if __name__ == "__main__":
