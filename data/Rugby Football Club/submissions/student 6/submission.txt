@@ -1,0 +1,28 @@
+1. What was the first RFC number for ICMP? What is its current status?
+
+Ans: The first RFC number for ICMP is RFC 777 and its current status is obsoleted by RFC 792
+
+2. What is the current RFC number of ICMP?
+
+Ans: The current RFC number of ICMP is RFC 792
+
+3. What RFCs update the RFC you mentioned in your answer to (2)?
+
+Ans: RFC 950, RFC 4884, RFC 6633 and RFC 6918
+
+4. How long is the checksum field in ICMPv4?
+
+Ans: 16 bits long
+
+5. What is the type of the Source Quench Message?
+
+Ans: The type of the Source Quench Message is type 4.
+
+6. According to the latest ICMP RFC, may a host send ICMP Source Quench Messages?
+Provide a quote supporting your answer.
+
+Ans: No, a host should not send ICMP Source Quench Messages. 
+Secontion 3,2,2,3 of RFC1122 says: "A host MUST NOT send ICMP Source Quench messages. If a Source Quench message is received, the IP layer MAY silently discard it." Section 4.2.3.9 of [RFC1122] is updated as follows:
+TCP MUST silently discard any received ICMP Source Quench messages.
+
+

@@ -1,0 +1,12 @@
+1. The first RFC number for ICMP is 0777. Status UNKNOWN (historic and obsolete)
+2. The current RFC number for ICMP is 792
+3. RFC0950, RFC4884, RFC6633, RFC6918
+4. The ICMP checksum field is 16 bit
+5. The type of the Source Quench Message is 4
+6. No, a host cannot send ICMP Source Quench Messages. 
+ Quote RFC6633 "3. Updating RFC 1122
+ This document hereby updates Section 3.2.2.3 of [RFC1122] as follows:
+ A host MUST NOT send ICMP Source Quench messages.
+ If a Source Quench message is received, the IP layer MAY silently
+ discard it."
+

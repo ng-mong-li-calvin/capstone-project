@@ -1,0 +1,8 @@
+1. Transport Layer Security under Transmission Control Protocol
+No. The file is encrypted.
+
+3. The file is a key to decrypt the file. 
+
+4. Yes.
+A Debian Apache web server is being accessed (from follow HTTP stream -> Server: Apache/2.0.55 (Debian) mod_ssl/2.0.55 OpenSSL/0.9.8a).
+The user is trying to access a series of directories and files (e.g., /icons/jhe061.png, /test, /test2, /icons/back.gif) there. 

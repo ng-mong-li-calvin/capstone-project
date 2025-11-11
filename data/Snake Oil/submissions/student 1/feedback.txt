@@ -1,0 +1,4 @@
+grade: 50
+feedback:
+1. Did you identify the hostname of the target before importing the secret ingredient?
+2. Have to be more elaborate on the last question, be more specific. What was visited, and what was the response?

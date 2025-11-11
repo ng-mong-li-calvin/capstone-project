@@ -1,0 +1,7 @@
+grade: 66
+feedback:
+1) What was the first RFC number for ICMP? What is its current status?
+
+RFC 777, deprecated by RFC0792
+
+4) 16 bits

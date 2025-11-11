@@ -1,0 +1,5 @@
+grade: 20
+feedback:
+1. What is the protocol used? Remember, please be specific.
+2. Did you identify the hostname of the target before importing the secret ingredient?
+3. Have to be more elaborate on the last question, be more specific. What was visited, and what was the response?

@@ -1,0 +1,6 @@
+TCP protocol in the file. 
+Apache/2.0.55 (Debian) mod_ssl/2.0.55 OpenSSL/0.9.8a / www@snakeoil.dom
+
+The user went to the server and attempted to get some images and gifs as well as trying to get something test1/2/3
+
+

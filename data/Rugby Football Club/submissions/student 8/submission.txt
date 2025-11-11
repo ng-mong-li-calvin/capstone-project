@@ -1,0 +1,17 @@
+1. RFC 777, Legacy
+
+2. RFC 792
+
+3.RFC 950, RFC 4884, RFC 6633, RFC 6918
+
+4. 16bits
+
+5. ICMPv4
+
+6. No.
+
+" Updating RFC 1122
+
+   This document hereby updates Section 3.2.2.3 of [RFC1122] as follows:
+
+      A host MUST NOT send ICMP Source Quench messages."

@@ -1,0 +1,28 @@
+ 1. Take a look at the attached capture file.
+ Which protocol can you see there?
+	TCP
+ Can you identify the host name of the target server?
+	localhost, 127.0.0.1 is a loopback IP address
+
+ 2. It seems like you need to add a secret ingredient.
+ Download the other attached file (secret.file), and open it with the
+ document editor of your choice.
+
+ 3. Can you guess what this file is?
+	It's an RSA private key based on the RSA algorithm
+
+4. Add the secret key file to your Wireshark’s key file store.
+ If you don’t know how to do it, look at Wireshark’s Wiki page on
+ SSL and RSA keys
+ Now, reload the capture file.
+ Can you see the real traffic now?
+ Where did the user try to go, and what did they try to do?
+	The RSA key's extension file type had to be changed to .key and used as a RSA key within wireshark.
+	The user tried to access the following:
+	openlogo-25.jpg
+	apache_pb.png
+	jhe061.png
+	favicon.ico
+	back.gif
+	blank.gif
+	test connection to text/html

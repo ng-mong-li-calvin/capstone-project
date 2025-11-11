@@ -1,0 +1,21 @@
+1. What was the first RFC number for ICMP? What is its current status?
+RFC 777, RFC 792
+
+
+2. What is the current RFC number of ICMP?
+RFC 792
+
+
+3. What RFCs update the RFC you mentioned in your answer to (2)?
+RFC 950, RFC 4884, RFC 6633, and RFC 6918
+
+
+4. How long is the checksum field in ICMPv4?
+2 bytes
+
+5. What is the type of the Source Quench Message?
+type 4
+
+
+6. According to the latest ICMP RFC, may a host send ICMP Source Quench Messages? Provide a quote supporting your answer.
+No, A quote from RFC 6633 states: "A host MUST NOT send ICMP Source Quench messages." 

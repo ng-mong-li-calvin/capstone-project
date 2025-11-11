@@ -1,0 +1,4 @@
+1a.Transport Layer
+1b. No.
+
+4. Yes, user might be trying to access his locally hosted webserver to download an image

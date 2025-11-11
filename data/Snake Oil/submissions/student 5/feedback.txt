@@ -1,0 +1,3 @@
+grade: 80
+feedback:
+1. Did you identify the hostname of the target before importing the secret ingredient?

@@ -1,0 +1,30 @@
+1. How many packets were sent to 192.168.1.3?
+
+Filter: ip.dst == 192.168.1.3
+Status bar at the bottom: 149
+
+2. What frames are ARP frames? Provide the frame numbers.
+
+Filter: arp
+From the first column: 87, 134, 135
+
+
+3. How many packets have we captured overall?
+
+Filter: None
+Status bar at the bottom: 292
+
+or 
+
+Statistics -> Protocol hierarchy ->234
+
+
+
+4. How many of these packets are TCP (Transmission Control Protocol) packets?
+
+Filter: tcp
+Status bar at the bottom: 234
+
+or
+
+Statistics -> Protocol hierarchy -> Look under TCP ->234

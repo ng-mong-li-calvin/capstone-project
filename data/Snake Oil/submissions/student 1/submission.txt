@@ -1,0 +1,4 @@
+1. TCP and TLS (SSLv3). No.
+3. Secret.file contains an RSA key.
+4. Yes, new HTTP packets emerged. The user tried to go to snakeoil.dom.
+   The user was trying to run a local testing server.
