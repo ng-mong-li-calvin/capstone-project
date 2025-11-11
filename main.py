@@ -12,7 +12,7 @@ def main():
     client = OpenAPIClient(api_key=os.getenv('OPENAI_API_KEY'))
     evaluation_service = EvaluationService(client)
     evaluation_results = evaluation_service.evaluate(rugby_model, rugby_students)
-    with open('evaluation_results.json', 'w') as f:
+    with open('data/Rugby Football Club/evaluation_results.json', 'w') as f:
         f.write(evaluation_results)
 
 
