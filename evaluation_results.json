@@ -1,0 +1,474 @@
+[
+    {
+        "student": "student 1",
+        "evaluations": [
+            {
+                "question_id": 1,
+                "model_answer": "RFC 777, deprecated by RFC0792",
+                "student_answer": "0777. Status: UNKNOWN.",
+                "evaluation": {
+                    "grade": "Fail",
+                    "explanation": "Incorrect status and format for RFC number."
+                }
+            },
+            {
+                "question_id": 2,
+                "model_answer": "RFC 792",
+                "student_answer": "0792.",
+                "evaluation": {
+                    "grade": "Pass",
+                    "explanation": "Correct RFC number, format difference is negligible."
+                }
+            },
+            {
+                "question_id": 3,
+                "model_answer": "RFC 950, 4884, 6633, 6918",
+                "student_answer": "Updated by RFC0950, RFC4884, RFC6633, RFC6918",
+                "evaluation": {
+                    "grade": "Pass",
+                    "explanation": "Student answer matches the model answer with correct RFC numbers."
+                }
+            },
+            {
+                "question_id": 4,
+                "model_answer": "16 bits",
+                "student_answer": "16 bit",
+                "evaluation": {
+                    "grade": "Pass",
+                    "explanation": "Correct length, minor grammatical difference."
+                }
+            },
+            {
+                "question_id": 5,
+                "model_answer": "Type 4",
+                "student_answer": "Type 4",
+                "evaluation": {
+                    "grade": "Pass",
+                    "explanation": "The student answer matches the model answer exactly."
+                }
+            },
+            {
+                "question_id": 6,
+                "model_answer": "Some students may say yes, because this is how it was defined in an early RFC of ICMP. However, in RFC6633 this was changed:\n\"A host MUST NOT send ICMP Source Quench Messages, if a source quench message is received, the IP layer MAY silently discard it.\"\nSource: \"tools.ietf.org/html/rfc6633\"",
+                "student_answer": "Yes. \"The gateway or host may send the source quench message when it",
+                "evaluation": {
+                    "grade": "Fail",
+                    "explanation": "Student answer contradicts RFC6633, which prohibits sending ICMP Source Quench Messages."
+                }
+            }
+        ]
+    },
+    {
+        "student": "student 2",
+        "evaluations": [
+            {
+                "question_id": 1,
+                "model_answer": "RFC 777, deprecated by RFC0792",
+                "student_answer": "The first RFC for ICMP was RFC 777, it is currently obsolete.",
+                "evaluation": {
+                    "grade": "Pass",
+                    "explanation": "Correct RFC number and status as obsolete."
+                }
+            },
+            {
+                "question_id": 2,
+                "model_answer": "RFC 792",
+                "student_answer": "The current RFC number of ICMP is RFC 792.",
+                "evaluation": {
+                    "grade": "Pass",
+                    "explanation": "The student answer matches the model answer exactly."
+                }
+            },
+            {
+                "question_id": 3,
+                "model_answer": "RFC 950, 4884, 6633, 6918",
+                "student_answer": "It is updated by RFC 950, RFC 4884, RFC 6633, and RFC 6918.",
+                "evaluation": {
+                    "grade": "Pass",
+                    "explanation": "Student answer matches the model answer exactly."
+                }
+            },
+            {
+                "question_id": 4,
+                "model_answer": "16 bits",
+                "student_answer": "16 bit.",
+                "evaluation": {
+                    "grade": "Pass",
+                    "explanation": "Student answer matches the model answer in content and meaning."
+                }
+            },
+            {
+                "question_id": 5,
+                "model_answer": "Type 4",
+                "student_answer": "4",
+                "evaluation": {
+                    "grade": "Pass",
+                    "explanation": "Correct type number provided."
+                }
+            },
+            {
+                "question_id": 6,
+                "model_answer": "Some students may say yes, because this is how it was defined in an early RFC of ICMP. However, in RFC6633 this was changed:\n\"A host MUST NOT send ICMP Source Quench Messages, if a source quench message is received, the IP layer MAY silently discard it.\"\nSource: \"tools.ietf.org/html/rfc6633\"",
+                "student_answer": "No. As stated in Section 3 of RFC 6633, a host must not send ICMP Source Quench messages.",
+                "evaluation": {
+                    "grade": "Pass",
+                    "explanation": "Correctly references RFC 6633 prohibiting ICMP Source Quench messages."
+                }
+            }
+        ]
+    },
+    {
+        "student": "student 3",
+        "evaluations": [
+            {
+                "question_id": 1,
+                "model_answer": "RFC 777, deprecated by RFC0792",
+                "student_answer": "RFC 0777",
+                "evaluation": {
+                    "grade": "Fail",
+                    "explanation": "Student answer lacks current status information."
+                }
+            },
+            {
+                "question_id": 2,
+                "model_answer": "RFC 792",
+                "student_answer": "RFC 0792",
+                "evaluation": {
+                    "grade": "Pass",
+                    "explanation": "Correct RFC number, leading zero is acceptable."
+                }
+            },
+            {
+                "question_id": 3,
+                "model_answer": "RFC 950, 4884, 6633, 6918",
+                "student_answer": "RFC0950, RFC4884, RFC6633, RFC6918",
+                "evaluation": {
+                    "grade": "Pass",
+                    "explanation": "Student listed all RFCs correctly, despite format differences."
+                }
+            },
+            {
+                "question_id": 4,
+                "model_answer": "16 bits",
+                "student_answer": "16 bit",
+                "evaluation": {
+                    "grade": "Pass",
+                    "explanation": "Student answer matches the model answer in content."
+                }
+            },
+            {
+                "question_id": 5,
+                "model_answer": "Type 4",
+                "student_answer": "4",
+                "evaluation": {
+                    "grade": "Pass",
+                    "explanation": "Correct type number provided."
+                }
+            },
+            {
+                "question_id": 6,
+                "model_answer": "Some students may say yes, because this is how it was defined in an early RFC of ICMP. However, in RFC6633 this was changed:\n\"A host MUST NOT send ICMP Source Quench Messages, if a source quench message is received, the IP layer MAY silently discard it.\"\nSource: \"tools.ietf.org/html/rfc6633\"",
+                "student_answer": "No, \"This document formally deprecates the use of ICMP Source Quench messages by transport protocols, formally updating RFC 792, RFC 1122, and RFC 1812.\"",
+                "evaluation": {
+                    "grade": "Pass",
+                    "explanation": "Correctly identifies ICMP Source Quench messages are deprecated, citing relevant RFC updates."
+                }
+            }
+        ]
+    },
+    {
+        "student": "student 4",
+        "evaluations": [
+            {
+                "question_id": 1,
+                "model_answer": "RFC 777, deprecated by RFC0792",
+                "student_answer": "What was the first RFC number for ICMP? What is its current status?",
+                "evaluation": {
+                    "grade": "Fail",
+                    "explanation": "Student answer is missing; no response provided."
+                }
+            },
+            {
+                "question_id": 2,
+                "model_answer": "RFC 792",
+                "student_answer": "What is the current RFC number of ICMP?",
+                "evaluation": {
+                    "grade": "Fail",
+                    "explanation": "Student repeated the question instead of providing an answer."
+                }
+            },
+            {
+                "question_id": 3,
+                "model_answer": "RFC 950, 4884, 6633, 6918",
+                "student_answer": "What RFCs update the RFC you mentioned in your answer to (2)?",
+                "evaluation": {
+                    "grade": "Fail",
+                    "explanation": "Student repeated the question instead of providing an answer."
+                }
+            },
+            {
+                "question_id": 4,
+                "model_answer": "16 bits",
+                "student_answer": "How long is the checksum field in ICMPv4?",
+                "evaluation": {
+                    "grade": "Fail",
+                    "explanation": "Student repeated the question instead of providing an answer."
+                }
+            },
+            {
+                "question_id": 5,
+                "model_answer": "Type 4",
+                "student_answer": "What is the type of the Source Quench Message?",
+                "evaluation": {
+                    "grade": "Fail",
+                    "explanation": "Student repeated the question instead of answering it."
+                }
+            },
+            {
+                "question_id": 6,
+                "model_answer": "Some students may say yes, because this is how it was defined in an early RFC of ICMP. However, in RFC6633 this was changed:\n\"A host MUST NOT send ICMP Source Quench Messages, if a source quench message is received, the IP layer MAY silently discard it.\"\nSource: \"tools.ietf.org/html/rfc6633\"",
+                "student_answer": "According to the latest ICMP RFC, may a host send ICMP Source Quench Messages? Provide a quote supporting your answer.",
+                "evaluation": {
+                    "grade": "Fail",
+                    "explanation": "Student did not answer the question or provide a supporting quote."
+                }
+            }
+        ]
+    },
+    {
+        "student": "student 5",
+        "evaluations": [
+            {
+                "question_id": 1,
+                "model_answer": "RFC 777, deprecated by RFC0792",
+                "student_answer": "The first RFC for ICMP was RFC 777, it is currently obsolete.",
+                "evaluation": {
+                    "grade": "Pass",
+                    "explanation": "Correct RFC number and status as obsolete."
+                }
+            },
+            {
+                "question_id": 2,
+                "model_answer": "RFC 792",
+                "student_answer": "The current RFC number of ICMP is RFC 792.",
+                "evaluation": {
+                    "grade": "Pass",
+                    "explanation": "Student answer matches the model answer exactly."
+                }
+            },
+            {
+                "question_id": 3,
+                "model_answer": "RFC 950, 4884, 6633, 6918",
+                "student_answer": "It is updated by RFC 950, RFC 4884, RFC 6633, and RFC 6918.",
+                "evaluation": {
+                    "grade": "Pass",
+                    "explanation": "Student answer matches the model answer exactly."
+                }
+            },
+            {
+                "question_id": 4,
+                "model_answer": "16 bits",
+                "student_answer": "16 bit.",
+                "evaluation": {
+                    "grade": "Pass",
+                    "explanation": "Student answer matches the model answer in content and meaning."
+                }
+            },
+            {
+                "question_id": 5,
+                "model_answer": "Type 4",
+                "student_answer": "4",
+                "evaluation": {
+                    "grade": "Pass",
+                    "explanation": "Correct type number provided, matches the model answer."
+                }
+            },
+            {
+                "question_id": 6,
+                "model_answer": "Some students may say yes, because this is how it was defined in an early RFC of ICMP. However, in RFC6633 this was changed:\n\"A host MUST NOT send ICMP Source Quench Messages, if a source quench message is received, the IP layer MAY silently discard it.\"\nSource: \"tools.ietf.org/html/rfc6633\"",
+                "student_answer": "No. As stated in Section 3 of RFC 6633, a host must not send ICMP Source Quench messages.",
+                "evaluation": {
+                    "grade": "Pass",
+                    "explanation": "Correctly references RFC 6633 prohibiting ICMP Source Quench messages."
+                }
+            }
+        ]
+    },
+    {
+        "student": "student 6",
+        "evaluations": [
+            {
+                "question_id": 1,
+                "model_answer": "RFC 777, deprecated by RFC0792",
+                "student_answer": "What was the first RFC number for ICMP? What is its current status?",
+                "evaluation": {
+                    "grade": "Fail",
+                    "explanation": "Student answer is missing; no response provided."
+                }
+            },
+            {
+                "question_id": 2,
+                "model_answer": "RFC 792",
+                "student_answer": "What is the current RFC number of ICMP?",
+                "evaluation": {
+                    "grade": "Fail",
+                    "explanation": "Student repeated the question instead of providing an answer."
+                }
+            },
+            {
+                "question_id": 3,
+                "model_answer": "RFC 950, 4884, 6633, 6918",
+                "student_answer": "What RFCs update the RFC you mentioned in your answer to (2)?",
+                "evaluation": {
+                    "grade": "Fail",
+                    "explanation": "Student repeated the question instead of providing an answer."
+                }
+            },
+            {
+                "question_id": 4,
+                "model_answer": "16 bits",
+                "student_answer": "How long is the checksum field in ICMPv4?",
+                "evaluation": {
+                    "grade": "Fail",
+                    "explanation": "Student repeated the question without providing an answer."
+                }
+            },
+            {
+                "question_id": 5,
+                "model_answer": "Type 4",
+                "student_answer": "What is the type of the Source Quench Message?",
+                "evaluation": {
+                    "grade": "Fail",
+                    "explanation": "Student repeated the question instead of providing an answer."
+                }
+            },
+            {
+                "question_id": 6,
+                "model_answer": "Some students may say yes, because this is how it was defined in an early RFC of ICMP. However, in RFC6633 this was changed:\n\"A host MUST NOT send ICMP Source Quench Messages, if a source quench message is received, the IP layer MAY silently discard it.\"\nSource: \"tools.ietf.org/html/rfc6633\"",
+                "student_answer": "According to the latest ICMP RFC, may a host send ICMP Source Quench Messages?",
+                "evaluation": {
+                    "grade": "Fail",
+                    "explanation": "Student answer is a question, not an answer with a quote."
+                }
+            }
+        ]
+    },
+    {
+        "student": "student 7",
+        "evaluations": [
+            {
+                "question_id": 1,
+                "model_answer": "RFC 777, deprecated by RFC0792",
+                "student_answer": "The first RFC number for ICMP is 0777. Status UNKNOWN (historic and obsolete)",
+                "evaluation": {
+                    "grade": "Pass",
+                    "explanation": "Correct RFC number and status as obsolete."
+                }
+            },
+            {
+                "question_id": 2,
+                "model_answer": "RFC 792",
+                "student_answer": "The current RFC number for ICMP is 792",
+                "evaluation": {
+                    "grade": "Pass",
+                    "explanation": "Student answer matches the model answer exactly."
+                }
+            },
+            {
+                "question_id": 3,
+                "model_answer": "RFC 950, 4884, 6633, 6918",
+                "student_answer": "RFC0950, RFC4884, RFC6633, RFC6918",
+                "evaluation": {
+                    "grade": "Pass",
+                    "explanation": "Student answer matches the model answer in content."
+                }
+            },
+            {
+                "question_id": 4,
+                "model_answer": "16 bits",
+                "student_answer": "The ICMP checksum field is 16 bit",
+                "evaluation": {
+                    "grade": "Pass",
+                    "explanation": "Student answer correctly states the checksum field is 16 bits."
+                }
+            },
+            {
+                "question_id": 5,
+                "model_answer": "Type 4",
+                "student_answer": "The type of the Source Quench Message is 4",
+                "evaluation": {
+                    "grade": "Pass",
+                    "explanation": "Student answer matches the model answer exactly."
+                }
+            },
+            {
+                "question_id": 6,
+                "model_answer": "Some students may say yes, because this is how it was defined in an early RFC of ICMP. However, in RFC6633 this was changed:\n\"A host MUST NOT send ICMP Source Quench Messages, if a source quench message is received, the IP layer MAY silently discard it.\"\nSource: \"tools.ietf.org/html/rfc6633\"",
+                "student_answer": "No, a host cannot send ICMP Source Quench Messages.",
+                "evaluation": {
+                    "grade": "Pass",
+                    "explanation": "Correctly states a host cannot send ICMP Source Quench Messages."
+                }
+            }
+        ]
+    },
+    {
+        "student": "student 8",
+        "evaluations": [
+            {
+                "question_id": 1,
+                "model_answer": "RFC 777, deprecated by RFC0792",
+                "student_answer": "RFC 777, Legacy",
+                "evaluation": {
+                    "grade": "Pass",
+                    "explanation": "Correct RFC number, 'Legacy' implies deprecated status."
+                }
+            },
+            {
+                "question_id": 2,
+                "model_answer": "RFC 792",
+                "student_answer": "RFC 792",
+                "evaluation": {
+                    "grade": "Pass",
+                    "explanation": "The student provided the correct RFC number for ICMP."
+                }
+            },
+            {
+                "question_id": 3,
+                "model_answer": "RFC 950, 4884, 6633, 6918",
+                "student_answer": "RFC 950, RFC 4884, RFC 6633, RFC 6918",
+                "evaluation": {
+                    "grade": "Pass",
+                    "explanation": "Student answer matches the model answer exactly."
+                }
+            },
+            {
+                "question_id": 4,
+                "model_answer": "16 bits",
+                "student_answer": "16bits",
+                "evaluation": {
+                    "grade": "Pass",
+                    "explanation": "Correct length and value, minor formatting difference."
+                }
+            },
+            {
+                "question_id": 5,
+                "model_answer": "Type 4",
+                "student_answer": "ICMPv4",
+                "evaluation": {
+                    "grade": "Fail",
+                    "explanation": "Student answered protocol, not message type number."
+                }
+            },
+            {
+                "question_id": 6,
+                "model_answer": "Some students may say yes, because this is how it was defined in an early RFC of ICMP. However, in RFC6633 this was changed:\n\"A host MUST NOT send ICMP Source Quench Messages, if a source quench message is received, the IP layer MAY silently discard it.\"\nSource: \"tools.ietf.org/html/rfc6633\"",
+                "student_answer": "No.",
+                "evaluation": {
+                    "grade": "Pass",
+                    "explanation": "Correctly states 'No', aligning with RFC6633's prohibition on sending ICMP Source Quench Messages."
+                }
+            }
+        ]
+    }
+]
