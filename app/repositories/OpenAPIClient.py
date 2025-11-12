@@ -49,7 +49,7 @@ class OpenAPIClient:
             content = ""
 
         try:
-            evaluation_response = EvaluationResponse.model_validate(content)
+            evaluation_response = EvaluationResponse.model_validate_json(content)
             return evaluation_response
         except ValidationError as e:
             raise ValueError(f"Failed to parse evaluation response: {e}")

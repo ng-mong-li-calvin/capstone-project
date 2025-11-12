@@ -7,8 +7,8 @@ from app.services.FolderSubmissionsService import FolderSubmissionsService
 
 def main():
     rugby_submissions = FolderSubmissionsService('./data/Rugby Football Club')
-    client = GeminiClient(api_key=os.getenv('GOOGLE_API_KEY'))
-    # client = OpenAPIClient(api_key=os.getenv('OPENAI_API_KEY'))
+    # client = GeminiClient(api_key=os.getenv('GOOGLE_API_KEY'))
+    client = OpenAPIClient(api_key=os.getenv('OPENAI_API_KEY'))
     rugby_submissions.evaluate_submissions(client)
 
 
