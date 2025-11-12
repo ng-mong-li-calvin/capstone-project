@@ -1,19 +1,15 @@
 import os
 
-from app.repositories.ModelQnARepository import ModelQnARepository
-from app.repositories.StudentAnswersRepository import StudentAnswersRepository
+from app.repositories.GeminiClient import GeminiClient
 from app.repositories.OpenAPIClient import OpenAPIClient
-from app.services.EvaluationService import EvaluationService
+from app.services.FolderSubmissionsService import FolderSubmissionsService
 
 
 def main():
-    rugby_model = ModelQnARepository('Rugby Football Club').get_model_qna()
-    rugby_students = StudentAnswersRepository('Rugby Football Club').get_student_answers()
-    client = OpenAPIClient(api_key=os.getenv('OPENAI_API_KEY'))
-    evaluation_service = EvaluationService(client)
-    evaluation_results = evaluation_service.evaluate(rugby_model, rugby_students)
-    with open('data/Rugby Football Club/evaluation_results.json', 'w') as f:
-        f.write(evaluation_results)
+    rugby_submissions = FolderSubmissionsService('./data/Rugby Football Club')
+    client = GeminiClient(api_key=os.getenv('GOOGLE_API_KEY'))
+    # client = OpenAPIClient(api_key=os.getenv('OPENAI_API_KEY'))
+    rugby_submissions.evaluate_submissions(client)
 
 
 if __name__ == "__main__":

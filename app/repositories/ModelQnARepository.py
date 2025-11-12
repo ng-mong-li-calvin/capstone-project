@@ -3,8 +3,8 @@ import json, re
 
 
 class ModelQnARepository:
-    def __init__(self, folder_name):
-        self.path = Path('data/' + folder_name)
+    def __init__(self, folder_path):
+        self.path = Path(folder_path)
         model_answer_file_path = next(self.path.rglob('*.txt'))  # Get the txt file path
         with open(model_answer_file_path, 'r') as f:
             text_content = f.read()
