@@ -4,8 +4,8 @@ from pathlib import Path
 
 class StudentAnswersRepository:
 
-    def __init__(self, folder_name):
-        self.path = Path('data/' + folder_name + '/submissions')
+    def __init__(self, folder_path):
+        self.path = Path(folder_path + '/submissions')
         self.student_answers = {}
         for student_dir in os.listdir(self.path):
             student_path = self.path / student_dir

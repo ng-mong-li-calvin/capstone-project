@@ -1,21 +1,22 @@
-from openai import OpenAI
+from google import genai
+from google.genai import types
 from pydantic import ValidationError
 
 from app.core.schemas import EvaluationResponse
 
 
-class OpenAPIClient:
+class GeminiClient:
     def __init__(self, api_key: str):
         if not api_key:
             raise ValueError("An API key is required to initialize the client.")
         self._api_key = api_key
-        self.client = OpenAI(api_key=self._api_key)
+        self.client = genai.Client(api_key=self._api_key)
 
     def set_api_key(self, api_key: str):
         if not api_key:
             raise ValueError("API key cannot be empty.")
         self._api_key = api_key
-        self.client = OpenAI(api_key=self._api_key)
+        self.client = genai.Client(api_key=self._api_key)
 
     def evaluate(self, question, model, student):
         prompt = f"""
@@ -28,23 +29,21 @@ class OpenAPIClient:
             Student answer: {student}
             """
 
-        response = self.client.chat.completions.parse(
-            model="gpt-4o",
-            messages=[
-                {"role": "system", "content": "You are an expert exam grader."},
-                {"role": "user", "content": prompt}
-            ],
-            response_format=EvaluationResponse,
+        config = types.GenerateContentConfig(
+            system_instruction="You are an expert exam grader.",
             temperature=0.0,
-            max_tokens=150,
-            top_p=1,
-            frequency_penalty=0,
-            presence_penalty=0,
+            max_output_tokens=150
+        )
+
+        response = self.client.models.generate_content(
+            model="gemini-2.5-flash",
+            contents=prompt,
+            config=config
         )
 
         # Safely get the model output content
         try:
-            content = response.choices[0].message.content
+            content = response.text
         except Exception:
             content = ""
 
