@@ -2,7 +2,7 @@ from google import genai
 from google.genai import types
 from pydantic import ValidationError
 
-from app.core.schemas import EvaluationResponse
+from app.models.schemas import EvaluationResponse
 
 
 class GeminiClient:

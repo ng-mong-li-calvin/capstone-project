@@ -1,0 +1,6 @@
+/target/
+/.venv
+/logs
+*.log
+*.tmp
+.env
