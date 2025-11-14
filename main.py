@@ -1,15 +1,18 @@
 import os
+from dotenv import load_dotenv
+from app.clients.OpenAPIClient import OpenAPIClient
+from app.services.EvaluationFlowService import EvaluationFlowService
 
-from app.repositories.GeminiClient import GeminiClient
-from app.repositories.OpenAPIClient import OpenAPIClient
-from app.services.FolderSubmissionsService import FolderSubmissionsService
+load_dotenv()
 
 
 def main():
-    rugby_submissions = FolderSubmissionsService('./data/Rugby Football Club')
-    # client = GeminiClient(api_key=os.getenv('GOOGLE_API_KEY'))
-    client = OpenAPIClient(api_key=os.getenv('OPENAI_API_KEY'))
-    rugby_submissions.evaluate_submissions(client)
+    print('OPENAI_API_KEY loaded:', bool(os.getenv('OPENAI_API_KEY')))
+    client = OpenAPIClient(model='gpt-4o', api_key=os.getenv('OPENAI_API_KEY'))
+    eval_flow_service = EvaluationFlowService()
+    eval_flow_service.retrieve_data(path='./data/Rugby Football Club')
+    eval_flow_service.evaluate_data(client)
+    eval_flow_service.export_data()
 
 
 if __name__ == "__main__":
