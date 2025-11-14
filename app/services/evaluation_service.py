@@ -20,7 +20,9 @@ def evaluate_all_students(client, model_qna: list, student_answers: dict) -> lis
             question_id = answer['question_id']
             student_answer = answer['student_answer']
             # Find the corresponding model answer
-            model_answer_entry = next((item for item in model_qna if item["question_id"] == question_id), None)
+            model_answer_entry = next(
+                (item for item in model_qna if item['question_id'] == question_id),
+                None ) # Default if not found
             if model_answer_entry:
                 question_text = model_answer_entry['question_text']
                 model_answer = model_answer_entry['answer_text']

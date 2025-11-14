@@ -15,18 +15,24 @@ def student_answers_repository(folder_path) -> dict:
             text_content = file.read()
         parsed_data = []
 
-        lines = [line.strip() for line in text_content.split('\n') if line.strip()]
+        # The single regex pattern
+        # Breakdown:
+        # 1. (\d+)\. : Match and capture the question ID (Group 1).
+        # 2. \s* : Match any whitespace after the ID.
+        # 3. ([\s\S]*?) : Match and capture the unified Question and Answer (Group 2).
+        # 4. (?=\n\n\d+\.|\Z) : Positive lookahead to ensure the match ends before the next question or at the end of the string.
+        pattern = re.compile(r'(\d+)\.\s*([\s\S]*?)(?=\n\n\d+\.|\Z)\s*', re.MULTILINE)
 
-        for line in lines:
-            match = re.match(r'^(\d+)\.(.*)', line)  # Matches 'N. Answer Text'
-            if match:
-                question_id = int(match.group(1))
-                student_answer = match.group(2).strip()
+        matches = pattern.findall(text_content)
+        for match in matches:
+            question_id = match[0]
+            student_answer_full = match[1].strip()
 
-                parsed_data.append({
-                    "question_id": question_id,
-                    "student_answer": student_answer
-                })
+            entry = {
+                "question_id": int(question_id),
+                "student_answer": student_answer_full
+            }
+            parsed_data.append(entry)
 
         student_answers[student_dir] = parsed_data
 
