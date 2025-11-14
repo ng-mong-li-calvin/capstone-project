@@ -1,3 +1,6 @@
+""" Prompts for exam grading tasks."""
+
+
 SYSTEM_PROMPT_EXAM_GRADER = "You are an expert exam grader."
 
 SYSTEM_PROMPT_JSON = "Your response must be a valid JSON object with 'grade' and 'explanation' fields."

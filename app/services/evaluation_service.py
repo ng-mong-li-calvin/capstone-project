@@ -2,6 +2,8 @@ import json
 from dotenv import load_dotenv
 from app.models.schemas import EvaluationResponse
 
+""" Service module to evaluate student answers against model answers"""
+
 
 load_dotenv()
 
@@ -58,7 +60,8 @@ def evaluate_all_students(client, model_qna: list, student_answers: dict) -> lis
     return results
 
 
-def evaluate_all_evaluations(client, json_serializable) -> EvaluationResponse:
+def evaluate_all_evaluations(client, json_serializable) -> list:
+    """ Re-evaluate all previous evaluations for further analysis or consistency checks. """
     for student in json_serializable:
         for question in student.get("evaluations", []):
             question_text = question.get("question_text", "")

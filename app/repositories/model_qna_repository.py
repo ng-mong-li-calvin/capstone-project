@@ -1,8 +1,11 @@
 from pathlib import Path
 import json, re
 
+""" Repository to parse and retrieve model Q&A from answer files. """
+
 
 def model_qna_repository(folder_path) -> list:
+    """ Parses model answer file and retrieves question and answer pairs. """
     path = Path(folder_path)
     model_answer_file_path = next(path.rglob('*.txt'))  # Get the txt file path
     with open(model_answer_file_path, 'r') as f:

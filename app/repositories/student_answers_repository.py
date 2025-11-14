@@ -1,8 +1,11 @@
 import re, os
 from pathlib import Path
 
+""" Repository to parse and retrieve student answers from submission files. """
+
 
 def student_answers_repository(folder_path) -> dict:
+    """ Parses student submission files and retrieves their answers."""
     path = Path(folder_path + '/submissions')
     student_answers = {}
     for student_dir in os.listdir(path):
