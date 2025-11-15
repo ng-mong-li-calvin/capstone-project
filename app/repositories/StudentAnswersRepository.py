@@ -21,6 +21,10 @@ class StudentAnswersRepository:
                 if match:
                     question_id = int(match.group(1))
                     student_answer = match.group(2).strip()
+                    # Strips out the question if it's included (before ?/n)
+                    ans_qn = re.search(r'^.*?\?\s+/n(.*)', student_answer, re.DOTALL)
+                    if ans_qn:
+                        return True, match.group(1)
 
                     parsed_data.append({
                         "question_id": question_id,
