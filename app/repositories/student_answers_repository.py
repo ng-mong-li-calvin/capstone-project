@@ -30,7 +30,7 @@ def student_answers_repository(folder_path) -> dict:
             # Strips out the question if it's included (before ?/n)
             ans_qn = re.search(r'^.*?\?\s+/n(.*)', student_answer, re.DOTALL)
             if ans_qn:
-                 return True, match.group(1)
+                 student_answer_full = match.group(1)
                 
             entry = {
                 "question_id": int(question_id),
